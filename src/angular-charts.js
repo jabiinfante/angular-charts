@@ -408,7 +408,8 @@ angular.module('angularCharts').directive('acChart', function($templateCache, $c
             return x0(i);
           })
           .attr("y", function(d) {
-            return height - Math.abs(y(d.y) - y(0));
+            // Let it breath a bit "-5"
+            return (height-5) - Math.abs(y(d.y) - y(0));
           })
         // .attr("transform", "rotate(270)")
         .text(function(d) {
