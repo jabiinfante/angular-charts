@@ -274,6 +274,7 @@ angular.module('angularCharts').directive('acChart', function($templateCache, $c
             x: d.x,
             y: e,
             s: i,
+            text: d.text || null,
             tooltip: angular.isArray(d.tooltip) ? d.tooltip[i] : d.tooltip
           };
         });
@@ -611,7 +612,7 @@ angular.module('angularCharts').directive('acChart', function($templateCache, $c
               return y(d.y);
             })
             .text(function(d) {
-              return d.y;
+              return d.text || d.y;
             });
         }
       });
@@ -885,7 +886,7 @@ angular.module('angularCharts').directive('acChart', function($templateCache, $c
           .attr("dy", ".35em")
           .style("text-anchor", "middle")
           .text(function(d) {
-            return d.data.y[0];
+            return d.data.text[0] || d.data.y[0];
           });
       }
 
@@ -1042,7 +1043,7 @@ angular.module('angularCharts').directive('acChart', function($templateCache, $c
               return y(d.y);
             })
             .text(function(d) {
-              return d.y;
+              return d.text || d.y;
             });
         }
       });
