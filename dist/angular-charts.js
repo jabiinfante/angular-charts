@@ -60,7 +60,7 @@ angular.module('angularCharts').directive('acChart', [
    */
     function getChildrenByClassname(childrens, className) {
       var child = null;
-      for (var i in childrens) {
+      for (var i = 0; i < childrens.length; i++) {
         if (angular.isElement(childrens[i])) {
           child = angular.element(childrens[i]);
           if (child.hasClass(className))
@@ -344,7 +344,7 @@ angular.module('angularCharts').directive('acChart', [
           }).attr('y', function (d) {
             return height - Math.abs(y(d.y) - y(0));
           }).text(function (d) {
-            return d.y;
+            return d.text || d.y;
           });
         }
         /**
