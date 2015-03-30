@@ -411,7 +411,7 @@ angular.module('angularCharts').directive('acChart', function($templateCache, $c
           })
         // .attr("transform", "rotate(270)")
         .text(function(d) {
-          return d.y;
+          return d.text || d.y;
         });
       }
 
